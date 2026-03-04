@@ -312,7 +312,7 @@ export default function MultiRoomClient({ roomId }: { roomId: string }) {
       gameMap.set("phase", "playing");
       gameMap.set("deckIds", shuffle(deckIds));
       gameMap.set("flips", []);
-      gameMap.set("matchedBy", Array(40).fill(null));
+      gameMap.set("matchedBy", Array(20).fill(null));
       gameMap.set("attempts", attempts);
       gameMap.set("participants", fixedPlayers.map((p) => p.id));
       gameMap.set("turnId", fixedPlayers[0].id);
@@ -426,7 +426,7 @@ export default function MultiRoomClient({ roomId }: { roomId: string }) {
           </div>
         ) : (
           <div className="panel">
-            <p className="meta">ホストが「ゲーム開始」を押すと40枚のカードが配られます。</p>
+            <p className="meta">ホストが「ゲーム開始」を押すと20枚のカードが配られます。</p>
           </div>
         )}
 

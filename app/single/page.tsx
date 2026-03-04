@@ -86,7 +86,7 @@ export default function SinglePage() {
             <h1>1人モード</h1>
             <Link href="/">トップへ</Link>
           </div>
-          <p className="meta">40枚すべて揃うまでの回数チャレンジです。</p>
+          <p className="meta">20枚すべて揃うまでの回数チャレンジです。</p>
           <div className="row">
             <p>回数: {state.attempts}</p>
             <button onClick={reset}>リセット</button>

@@ -1,4 +1,4 @@
-export const CARD_IMAGES = Array.from({ length: 20 }, (_, i) => {
+export const CARD_IMAGES = Array.from({ length: 10 }, (_, i) => {
   const num = String(i + 1).padStart(2, "0");
   return `/cards/hoodie_${num}.png`;
 });

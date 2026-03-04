@@ -6,7 +6,7 @@ export default function HomePage() {
       <div className="container panel" style={{ display: "grid", gap: 16 }}>
         <h1>hoodies 神経衰弱</h1>
         <p className="meta">
-          20種類の絵柄を2枚ずつ使った40枚構成です。全てのペアを揃えるまでの回数を競います。
+          10種類の絵柄を2枚ずつ使った20枚構成です。全てのペアを揃えるまでの回数を競います。
         </p>
         <div className="row">
           <Link href="/single">
