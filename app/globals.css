@@ -1,0 +1,198 @@
+:root {
+  --bg1: #f8fbff;
+  --bg2: #e2ecff;
+  --panel: #ffffff;
+  --line: #cdd9ee;
+  --text: #1f2a44;
+  --muted: #5f6b86;
+  --accent: #2563eb;
+  --accent-2: #0f172a;
+  --win: #059669;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 0 0, #ffffff 0%, var(--bg1) 35%, var(--bg2) 100%);
+}
+
+main {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: var(--accent-2);
+}
+
+input {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+  padding: 6px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  transition: transform 0.14s ease;
+}
+
+.card:disabled {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card.back {
+  background: linear-gradient(145deg, #334155, #0f172a);
+  color: #dbeafe;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.card.matched {
+  outline: 3px solid rgba(5, 150, 105, 0.5);
+}
+
+.card.wrong {
+  outline: 3px solid rgba(220, 38, 38, 0.8);
+  animation: wrong-shake 0.4s linear;
+}
+
+@keyframes wrong-shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.result {
+  color: var(--win);
+  font-weight: 700;
+}
+
+.rank {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.rank-item {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px;
+  background: #f8fbff;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
